@@ -37,7 +37,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="mb-6 text-6xl font-bold tracking-normal leading-tight sm:text-7xl font-[Glitten] bg-gradient-to-b from-gray-900 to-white text-transparent bg-clip-text"
+          className="mb-6 text-6xl font-bold tracking-normal leading-tight sm:text-7xl font-[Glitten] text-transparent bg-clip-text animate-gradient bg-[length:100%_200%] bg-gradient-to-b from-gray-900 via-gray-100 to-gray-900"
+          style={{
+            animation: 'gradient 8s linear infinite'
+          }}
         >
           Crafting Digital <br /> Excellence
         </motion.h1>
