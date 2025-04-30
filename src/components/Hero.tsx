@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import TickerPill from './TickerPill';
+import { DotPattern } from './ui/DotPattern';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,7 +25,20 @@ const Hero = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/80" />
+      <div className="absolute inset-0 bg-black/75" />
+
+      {/* Dot Pattern */}
+      <div className="absolute inset-0 z-[1]">
+        <DotPattern
+          className="[mask-image:radial-gradient(ellipse_300px_250px_at_50%_45%,white,transparent)]"
+          width={40}
+          height={40}
+          cx={20}
+          cy={20}
+          cr={1}
+          fill="white"
+        />
+      </div>
 
       {/* Content */}
       <motion.div
