@@ -25,10 +25,10 @@ export const TeamMemberCard = ({ member, index, className = "" }: TeamMemberCard
       className="flex-shrink-0"
     >
       <Card
-        className={`relative w-[361px] h-[420px] rounded-2xl overflow-hidden border border-solid border-[#2222220f] bg-cover bg-[50%_50%] ${
+        className={`relative w-[361px] h-[420px] rounded-2xl overflow-hidden border border-solid border-[rgba(34, 34, 34, 0.06)] bg-cover bg-[50%_50%] ${
           member.isDark ? "" : "bg-blend-luminosity"
         } ${className}`}
-        style={{ 
+        style={{
           backgroundImage: `url(${member.image})`,
           filter: 'grayscale(100%)'
         }}
@@ -58,17 +58,15 @@ export const TeamMemberCard = ({ member, index, className = "" }: TeamMemberCard
           }`}
         >
           <div
-            className={`${
-              index === 0
-                ? "mb-5 w-[321px] h-[104px] ml-5"
-                : "mb-7 w-80 ml-[-3px]"
-            } ${
+            className={`
+                 mb-5 w-[321px] h-[104px] ml-5
+          ${
               index === 2
                 ? "h-[68px]"
                 : index === 0 || index === 4
                   ? "h-[104px]"
                   : "h-[86px]"
-            } items-${index === 0 ? "end" : "start"} gap-3 flex relative flex-col`}
+            } items-start gap-3 flex relative flex-col`}
           >
             <blockquote
               className={`relative self-stretch mt-[-1.00px] [font-family:'Sora',Helvetica] font-light text-sm tracking-[0.14px] leading-[normal] ${
@@ -78,7 +76,7 @@ export const TeamMemberCard = ({ member, index, className = "" }: TeamMemberCard
               "{member.quote}"
             </blockquote>
 
-            <div className="inline-flex items-start gap-2 relative flex-[0_0_auto]">
+            <div className="inline-flex items-center gap-2 relative flex-[0_0_auto] ">
               <span
                 className={`relative w-fit mt-[-1.00px] [font-family:'Clash_Display-Medium',Helvetica] font-medium text-base text-center tracking-[0] leading-[normal] ${
                   member.isDark ? "text-white" : "text-[#010101]"

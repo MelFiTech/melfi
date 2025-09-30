@@ -23,16 +23,16 @@ export const LiveProjectsSubsection = (): React.ReactElement => {
     {
       title: "Snugs",
       description:
-        "Go live faster with design. No delays, no excuses. Beautiful, user-friendly digital experiences.",
+        "Flirt loud, Meet fast, Feel the spark: A dating app where you get to meet people and connect faster.",
       image: "/projects/snugs.png",
       hasImage: true,
     },
     {
       title: "Karama",
       description:
-        "Go live faster with design. No delays, no excuses. Beautiful, user-friendly digital experiences.",
-      image: null,
-      hasImage: false,
+        "Meet Karama, the first matchmaking app, connecting  families and caregivers.",
+      image: "/projects/karama.png",
+      hasImage: true,
     },
     {
       title: "Dysh",
@@ -73,7 +73,7 @@ export const LiveProjectsSubsection = (): React.ReactElement => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[88px] max-w-[1280px] mx-auto">
+        <div className="flex flex-col md:flex-row  max-w-[1280px] mx-auto md:justify-around ">
           {/* Left column: indices 0,2,4 */}
           <div className="flex flex-col gap-[115px]">
             {projects.filter((_, i) => i % 2 === 0).map((project, idx) => (

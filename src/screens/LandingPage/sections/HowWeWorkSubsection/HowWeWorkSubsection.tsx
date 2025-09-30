@@ -25,10 +25,11 @@ const workflowSteps = [
 export const HowWeWorkSubsection = (): React.ReactElement => {
   return (
     <section id="how-we-work" className="relative w-full bg-white py-24 scroll-mt-28">
-      <div className="container mx-auto px-6 max-w-[1248px] grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+      <div className="container mx-auto px-6 max-w-[1248px] grid grid-cols-1 lg:grid-cols-2 gap-14 ">
         {/* Left copy column */}
-        <div className="flex flex-col gap-4 max-w-[560px]">
-          <Badge className="w-fit bg-[#ff9b39] text-white hover:bg-[#ff9b39] px-3 py-1 rounded-[50px] h-auto">
+        <div className="flex flex-col  flex-1 justify-between gap-4 max-w-[560px]">
+         <div className="flex flex-col gap-4">
+           <Badge className="w-fit bg-[#ff9b39] text-white hover:bg-[#ff9b39] px-3 py-1 rounded-[50px] h-auto">
             <span className="[font-family:'Sora',Helvetica] font-normal text-xs tracking-[0.12px] leading-[26px]">Steps to deliver</span>
           </Badge>
           <h2 className="font-medium text-neutral-900 text-4xl tracking-[0] leading-[normal]">How we Work</h2>
@@ -36,8 +37,9 @@ export const HowWeWorkSubsection = (): React.ReactElement => {
             Our approach is simple: understand our clients&apos; needs, explore creative
             solutions, and deliver brands and digital products that stand out.
           </p>
+         </div>
 
-          <Button className="mt-6 inline-flex items-center justify-center gap-2.5 h-auto px-6 py-4 rounded-[60px] border-2 border-solid border-[#0049b9] shadow-[inset_0px_4px_7px_#7aaeff] [background:radial-gradient(50%_50%_at_50%_15%,rgba(71,143,254,1)_0%,rgba(6,93,226,1)_100%)] hover:[background:radial-gradient(50%_50%_at_50%_15%,rgba(71,143,254,1)_0%,rgba(6,93,226,1)_100%)] w-full max-w-[260px]">
+          <Button className="mt-6 inline-flex items-center justify-center gap-2.5 h-auto px-6 py-4 rounded-[60px] border-2 border-solid border-[#0049b9] shadow-[inset_0px_4px_7px_#7aaeff] [background:radial-gradient(50%_50%_at_50%_15%,rgba(71,143,254,1)_0%,rgba(6,93,226,1)_100%)] hover:[background:radial-gradient(50%_50%_at_50%_15%,rgba(71,143,254,1)_0%,rgba(6,93,226,1)_100%)] w-full ">
             <span className="[font-family:'Sora',Helvetica] font-semibold text-white text-base tracking-[0] leading-[normal]">
               Book a Free Call today😉
             </span>
