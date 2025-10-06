@@ -2,6 +2,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '../../components/ui/button';
+import { LazyImage } from '../OptimizedImage';
 
 export const Header = (): React.ReactElement => {
   const [isPastHero, setIsPastHero] = useState(false);
@@ -43,10 +44,14 @@ export const Header = (): React.ReactElement => {
           className={`mx-auto flex w-full max-w-[1440px] items-center justify-between pt-6 pb-3 px-4 md:px-[60px]`}
         >
           <div className='inline-flex items-center gap-4 md:gap-[66px] relative flex-[0_0_auto] rounded-[80px]'>
-            <img
+            <LazyImage
               className='relative w-[102.41px] h-[35px] cursor-pointer'
               alt='Melfi LOGO'
               src={isPastHero ? '/MELFI-LOGO-BLACK.png' : '/MELFI-LOGO.png'}
+              width={102}
+              height={35}
+              quality={90}
+              priority
               onClick={() => {
                 setHidden(false);
                 document.documentElement.scrollTop = 0;

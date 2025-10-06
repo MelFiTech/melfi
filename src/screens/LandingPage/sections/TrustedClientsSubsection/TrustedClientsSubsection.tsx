@@ -1,5 +1,6 @@
 import { Star } from 'lucide-react';
 import React from 'react';
+import { LazyImage } from '../../../../components/OptimizedImage';
 import { Ticker } from '../../../../components/Ticker/Ticker';
 import { Badge } from '../../../../components/ui/badge';
 
@@ -51,11 +52,32 @@ export const TrustedClientsSubsection = (): React.ReactElement => {
               {feature.icon === 'star' ? (
                 <Star className='w-5 h-5 text-amber-500' aria-hidden />
               ) : feature.icon === 'bag' ? (
-                <img src='/icons/bag.png' alt='Bag' className='w-5 h-5' />
+                <LazyImage
+                  src='/icons/bag.png'
+                  alt='Bag'
+                  className='w-5 h-5'
+                  width={20}
+                  height={20}
+                  quality={80}
+                />
               ) : feature.icon === 'user' ? (
-                <img src='/icons/user.png' alt='Users' className='w-5 h-5' />
+                <LazyImage
+                  src='/icons/user.png'
+                  alt='Users'
+                  className='w-5 h-5'
+                  width={20}
+                  height={20}
+                  quality={80}
+                />
               ) : (
-                <img src='/icons/dev.png' alt='Dev' className='w-5 h-5' />
+                <LazyImage
+                  src='/icons/dev.png'
+                  alt='Dev'
+                  className='w-5 h-5'
+                  width={20}
+                  height={20}
+                  quality={80}
+                />
               )}
               <span className="w-fit mt-[-1.00px] opacity-50 [font-family:'Sora',Helvetica] font-normal text-neutral-900 md:text-sm text-xs tracking-[-0.56px] leading-[26px] whitespace-nowrap">
                 {feature.text}
@@ -75,10 +97,13 @@ export const TrustedClientsSubsection = (): React.ReactElement => {
               key={index}
               className='md:w-[134px] w-[100px] h-[44px] bg-white flex items-center justify-center rounded'
             >
-              <img
+              <LazyImage
                 src={logo.src}
                 alt={`${logo.alt} logo`}
                 className='max-w-full max-h-full object-contain opacity-80'
+                width={134}
+                height={44}
+                quality={75}
               />
             </div>
           ))}

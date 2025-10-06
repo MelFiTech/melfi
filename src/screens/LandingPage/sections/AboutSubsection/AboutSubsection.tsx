@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
+import { LazyImage } from '../../../../components/OptimizedImage';
 import { TabOption, Tabs } from '../../../../components/Tabs/Tabs';
 import { TeamMember, TeamMemberCard } from '../../../../components/TeamMemberCard/TeamMemberCard';
 
@@ -246,10 +247,13 @@ export const AboutSubsection = (): React.ReactElement => {
             key={index}
             className='w-full h-[80px] bg-white rounded-lg border border-[#2222220f] flex items-center justify-center p-4'
           >
-            <img
+            <LazyImage
               src={logo.src}
               alt={`${logo.alt} logo`}
               className='max-w-full max-h-full object-contain opacity-80'
+              width={120}
+              height={60}
+              quality={75}
             />
           </div>
         ))}

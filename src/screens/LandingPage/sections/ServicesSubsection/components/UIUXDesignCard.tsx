@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { MousePointer2 } from 'lucide-react';
 import React from 'react';
+import { LazyImage } from '../../../../../components/OptimizedImage';
 import { Card, CardContent } from '../../../../../components/ui/card';
 
 const cursors = [
@@ -49,10 +50,13 @@ export const UIUXDesignCard = (): React.ReactElement => {
           </p>
         </div>
 
-        <img
+        <LazyImage
           className='absolute top-[152px] left-1/2 -translate-x-1/2 w-[776px] h-[378px] object-contain'
           alt='UI/UX Design'
           src='/images/design.png'
+          width={776}
+          height={378}
+          quality={85}
         />
 
         {/* Animated cursors over the image area */}

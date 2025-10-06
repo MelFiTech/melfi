@@ -1,4 +1,5 @@
 import React from 'react';
+import { LazyImage } from '../../../../../components/OptimizedImage';
 import { Card, CardContent } from '../../../../../components/ui/card';
 
 export const BrandingMotionDesignCard = (): React.ReactElement => {
@@ -15,10 +16,13 @@ export const BrandingMotionDesignCard = (): React.ReactElement => {
           </p>
         </div>
 
-        <img
+        <LazyImage
           className='absolute top-[calc(50.00%_-_149px)] left-1/2 -translate-x-1/2 w-[1000px] h-[550px] object-contain'
           alt='Branding & Motion Design'
           src='/images/branding.png'
+          width={1000}
+          height={550}
+          quality={85}
         />
       </CardContent>
     </Card>

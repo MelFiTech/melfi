@@ -3,7 +3,9 @@ import React from 'react';
 
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import Image from 'next/image';
 import { Header } from '../../../../components/Header/Header';
+import { LazyImage } from '../../../../components/OptimizedImage';
 import { Badge } from '../../../../components/ui/badge';
 import { Button } from '../../../../components/ui/button';
 
@@ -17,11 +19,16 @@ const toolIcons = [
 
 export const HeroSubsection = (): React.ReactElement => {
   return (
-    <section
-      id='hero'
-      className='relative w-full h-[925px] bg-cover bg-[50%_50%]'
-      style={{ backgroundImage: 'url(/images/Hero-bg.png)' }}
-    >
+    <section id='hero' className='relative w-full h-[925px] overflow-hidden'>
+      <Image
+        src='/images/Hero-bg.png'
+        alt='Hero Background'
+        fill
+        className='object-cover object-[50%_50%]'
+        priority
+        quality={90}
+        sizes='100vw'
+      />
       <div id='hero-top-sentinel' className='absolute top-0 left-0 right-0 h-1' />
       <Header />
 
@@ -53,7 +60,14 @@ export const HeroSubsection = (): React.ReactElement => {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   className='inline-flex items-center gap-2.5 p-1.5 relative flex-[0_0_auto] bg-[#000f24] rounded-[50px] cursor-pointer'
                 >
-                  <img className='relative w-4 h-4' alt={icon.alt} src={icon.src} />
+                  <LazyImage
+                    className='relative w-4 h-4'
+                    alt={icon.alt}
+                    src={icon.src}
+                    width={16}
+                    height={16}
+                    quality={80}
+                  />
                 </motion.div>
               ))}
             </div>

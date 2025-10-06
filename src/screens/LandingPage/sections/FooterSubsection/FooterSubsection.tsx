@@ -1,5 +1,6 @@
 import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
 import React from 'react';
+import { LazyImage } from '../../../../components/OptimizedImage';
 
 const socialLinks = [
   { icon: LinkedinIcon, alt: 'LinkedIn' },
@@ -16,10 +17,13 @@ export const FooterSubsection = (): React.ReactElement => {
       </div>
       <div className='flex flex-col md:flex-row w-full md:w-[1205px] items-start justify-between absolute top-[57px] md:left-[calc(50.00%_-_602px)]  md:px-0 px-4'>
         <div className='flex flex-col md:w-[281px] w-full items-start gap-6 relative'>
-          <img
+          <LazyImage
             className='md:w-[102.41px] w-[70px] md:h-[35px] h-[28px]'
             alt='Melfi LOGO'
             src='/MELFI-LOGO-BLACK.png'
+            width={102}
+            height={35}
+            quality={90}
           />
           <div className="w-fit [font-family:'Sora',Helvetica] font-normal text-transparent text-base text-center tracking-[-0.64px] leading-[26px] whitespace-nowrap">
             <span className='text-[#10203b80] tracking-[-0.10px]'>
