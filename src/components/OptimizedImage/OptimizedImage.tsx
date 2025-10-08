@@ -18,6 +18,7 @@ interface OptimizedImageProps {
   style?: React.CSSProperties;
   onLoad?: () => void;
   onError?: () => void;
+  onClick?: () => void;
   // Animation props
   animate?: boolean;
   initial?: any;
@@ -43,6 +44,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   style,
   onLoad,
   onError,
+  onClick,
   animate = false,
   initial,
   whileInView,
@@ -67,6 +69,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     style,
     onLoad,
     onError,
+    onClick,
     ...props,
   };
 
@@ -161,7 +164,10 @@ export const LazyImage: React.FC<OptimizedImageProps> = (props) => (
   <OptimizedImage
     {...props}
     priority={false}
-    placeholder='blur'
-    blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
+    placeholder='empty'
+    style={{
+      ...props.style,
+      backgroundColor: 'transparent',
+    }}
   />
 );

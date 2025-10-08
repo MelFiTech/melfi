@@ -1,6 +1,6 @@
 'use client';
 import { ArrowUpRight } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button } from '../../components/ui/button';
 import { LazyImage } from '../OptimizedImage';
 
@@ -8,6 +8,17 @@ export const Header = (): React.ReactElement => {
   const [isPastHero, setIsPastHero] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollRef = useRef(0);
+
+  useLayoutEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY || 0;
+      const last = lastScrollRef.current;
+      setIsPastHero(y > 800);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {

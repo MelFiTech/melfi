@@ -26,8 +26,10 @@ export const HeroSubsection = (): React.ReactElement => {
         fill
         className='object-cover object-[50%_50%]'
         priority
-        quality={90}
+        quality={85}
         sizes='100vw'
+        placeholder='empty'
+        style={{ backgroundColor: 'transparent' }}
       />
       <div id='hero-top-sentinel' className='absolute top-0 left-0 right-0 h-1' />
       <Header />
@@ -66,7 +68,9 @@ export const HeroSubsection = (): React.ReactElement => {
                     src={icon.src}
                     width={16}
                     height={16}
-                    quality={80}
+                    quality={85}
+                    priority={index === 0}
+                    style={{ backgroundColor: 'transparent' }}
                   />
                 </motion.div>
               ))}
