@@ -113,8 +113,8 @@ export const Header = (): React.ReactElement => {
                 : 'bg-white text-neutral-900 hover:bg-gray-100'
             }`}
           >
-            <span className='hidden sm:inline'>Book a Call with Melfi</span>
-            <span className='sm:hidden'>Book Call</span>
+            <span className='hidden sm:inline'>Let's Talk About Your Project</span>
+            <span className='sm:hidden'>Book Call Now</span>
             <ArrowUpRight className='w-4 h-4' aria-hidden />
           </Button>
         </div>
